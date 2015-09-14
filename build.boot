@@ -10,12 +10,12 @@
 
 (bootlaces! +version+)
 
-(require '[boot.multiline-str :refer :all])
+(require '[boot.heredoc :refer :all])
 
 (task-options!
-  pom  {:project     'tailrecursion/boot-multiline-str
+  pom  {:project     'tailrecursion/boot-heredoc
         :version     +version+
         :description "Boot task for parsing multiline strings"
-        :url         "https://github.com/tailrecursion/boot-multiline-str"
-        :scm         {:url "https://github.com/tailrecursion/boot-multiline-str"}
+        :url         "https://github.com/tailrecursion/boot-heredoc"
+        :scm         {:url "https://github.com/tailrecursion/boot-heredoc"}
         :license     {"Eclipse Public License" "http://www.eclipse.org/legal/epl-v10.html"}})

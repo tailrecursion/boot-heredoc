@@ -1,4 +1,4 @@
-(ns boot.multiline-str
+(ns boot.heredoc
   {:boot/export-tasks true}
   (:require
     [boot.core       :as boot]
@@ -26,8 +26,8 @@
             (let [i (if-not (empty? txt) i (count (re-find pad line)))]
               (recur (conj txt (unpad line i)) i lines out))))))))
 
-(boot/deftask multiline-str
-  "Parse files replacing code between separators with a multiline string. Default block start is \";;{{\" and default block ending is \";;}}\""
+(boot/deftask heredoc
+  "Parse files replacing code between separators with a multiline string literal. Default block start is \";;{{\" and default block ending is \";;}}\""
   [s start    START    str "Start delimiter as a string. This will be converted to a pattern using re-pattern. Defaults to `;;\\{\\{"
    e end      END      str "End delimiter. This will be converted to a pattern using re-pattern. Defaults to `;;\\}\\}`"
    f file-ext FILE-EXT str "File extension to replace multiline strings. Eg.: `.hl` (the default)"]
