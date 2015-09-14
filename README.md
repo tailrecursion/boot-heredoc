@@ -36,7 +36,7 @@ Add `boot-heredoc` to your `build.boot` dependencies and `require` the namespace
 ```clj
 (merge-env!
   :dependencies '[[tailrecursion/boot-heredoc "X.Y.Z" :scope "test"]])
-(require '[tailrecursion.boot-heredoc :refer [heredoc]])
+(require '[boot.heredoc :refer [heredoc]])
 ```
 
 By default the multiline string literals starts with `;;{{` and ends with `;;}}` and
