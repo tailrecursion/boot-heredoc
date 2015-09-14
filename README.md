@@ -8,6 +8,24 @@
 
 [Boot] task for adding multiline strings to Clojure
 
+## Example
+```clojure
+(def lorem-ipsum
+  ;;{{
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget
+  eleifend metus. Curabitur vitae vestibulum ligula, vel pulvinar nisl. Sed
+  cursus ipsum id enim rutrum iaculis. Mauris non ullamcorper sem. In porttitor
+  mi ut massa molestie, eu pharetra turpis aliquet. Ut fermentum varius tortor,
+  sit amet maximus mi. Praesent et orci orci. Nullam auctor nisi eget sagittis
+  pharetra. Sed ullamcorper mauris sit amet metus pulvinar, et pretium elit
+  tincidunt.
+  ;;}}
+  )
+
+;; becomes...
+
+(def lorem-ipsum "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget\neleifend metus. Curabitur vitae vestibulum ligula, vel pulvinar nisl. Sed\ncursus ipsum id enim rutrum iaculis. Mauris non ullamcorper sem. In porttitor\nmi ut massa molestie, eu pharetra turpis aliquet. Ut fermentum varius tortor,\nsit amet maximus mi. Praesent et orci orci. Nullam auctor nisi eget sagittis\npharetra. Sed ullamcorper mauris sit amet metus pulvinar, et pretium elit\ntincidunt.")
+```
 ## Usage
 
 Add `boot-multiline-str` to your `build.boot` dependencies and `require` the namespace.
