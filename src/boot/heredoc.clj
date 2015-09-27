@@ -21,9 +21,12 @@
             (recur [] i lines out)
             (recur txt i lines (conj out line)))
           (if (re-find end line)
-            (let [s (pr-str (str/trim (str/join "\n" txt)))]
-              (recur nil 0 (rest lines) (conj (pop out) (str (peek out) " " s (unpad (first lines) i)))))
-            (let [i (if-not (empty? txt) i (count (re-find pad line)))]
+            (let [line-number-equalizer (apply str (repeat (+ 3 (count txt)) "\n"))
+                  s (pr-str (str/trim (str/join "\n" txt)))]
+              (recur nil 0 (rest lines) (conj (pop out) (str (peek out) " " s (unpad (first lines) i) line-number-equalizer))))
+            (let [i (if-not (empty? txt)
+                      i
+                      (count (re-find pad line)))]
               (recur (conj txt (unpad line i)) i lines out))))))))
 
 (boot/deftask heredoc

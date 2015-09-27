@@ -2,7 +2,7 @@
 
 [](dependency)
 ```clojure
-[tailrecursion/boot-heredoc "0.1.0"] ;; latest release
+[tailrecursion/boot-heredoc "0.1.1"] ;; latest release
 ```
 [](/dependency)
 
